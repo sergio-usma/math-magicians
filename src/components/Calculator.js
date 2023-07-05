@@ -3,9 +3,40 @@ import calculate from '../logic/calculate';
 
 function Calculator() {
   const [result, setResult] = useState('');
+  const [obj, setObj] = useState({
+    total: null,
+    next: null,
+    operation: null,
+  });
 
   const handleClick = (e) => {
-    setResult(result.concat(e.target.name));
+    const buttonName = e.target.name;
+    const newObj = calculate(obj, buttonName);
+    if (buttonName === 'AC') {
+      setObj({
+        total: null,
+        next: null,
+        operation: null,
+      });
+      setResult('');
+      return;
+    }
+
+    if (buttonName === '=') {
+      setObj({
+        total: newObj.total,
+        next: newObj.next,
+        operation: newObj.operation,
+      });
+      setResult(newObj.total);
+    } else {
+      setObj({
+        total: newObj.total,
+        next: newObj.next,
+        operation: newObj.operation,
+      });
+      setResult(newObj.next);
+    }
   };
 
   return (
@@ -15,17 +46,14 @@ function Calculator() {
       </form>
 
       <div className="buttons">
-        <button className="ac" type="button" onClick={handleClick}>AC</button>
-
-        <button type="button" onClick={handleClick}>+/-</button>
-
-        <button type="button" onClick={handleClick}>%</button>
-
-        <button name="/" className="div op" type="button" onClick={handleClick}>&divide;</button>
+        <button name="AC" type="button" onClick={handleClick}>AC</button>
+        <button name="+/-" type="button" onClick={handleClick}>+/-</button>
+        <button name="%" type="button" onClick={handleClick}>%</button>
+        <button name="÷" className="div op" type="button" onClick={handleClick}>&divide;</button>
         <button name="7" type="button" onClick={handleClick}>7</button>
         <button name="8" type="button" onClick={handleClick}>8</button>
         <button name="9" type="button" onClick={handleClick}>9</button>
-        <button name="*" className="mul op" type="button" onClick={handleClick}>&times;</button>
+        <button name="x" className="mul op" type="button" onClick={handleClick}>&times;</button>
         <button name="4" type="button" onClick={handleClick}>4</button>
         <button name="5" type="button" onClick={handleClick}>5</button>
         <button name="6" type="button" onClick={handleClick}>6</button>
