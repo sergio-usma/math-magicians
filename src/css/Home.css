@@ -1,0 +1,31 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.home__container {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding: 0 2rem;
+}
+
+.home__title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.home_intro {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  text-align: justify;
+}
