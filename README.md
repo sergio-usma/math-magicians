@@ -62,7 +62,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://sergio-usma.github.io/math-magicians/) (Coming Soon)
+- [Live Demo Link](https://math-magicians-bhn8.onrender.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
