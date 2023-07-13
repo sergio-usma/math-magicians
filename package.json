@@ -2,7 +2,6 @@
   "name": "math-magicians",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://sergio-usma.github.io/math-magicians",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -19,8 +18,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "REACT_APP_RENDER_GIT_COMMTL=$RENDER_GIT_COMMIT yarn build"
   },
   "eslintConfig": {
     "extends": [
@@ -51,7 +49,6 @@
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "gh-pages": "^5.0.0",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^21.0.0",
     "stylelint-csstree-validator": "^1.9.0",
